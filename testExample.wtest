@@ -1,9 +1,34 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "juego y personajes con elementos" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
+
+test "el castillo mide 20 metros" {
+  assert.equals(20, castillo.altura())
+}
+
+test "el castillo inicia con una defensa de 150" {
+  assert.equals(150, castillo.nivelDeDefensa())
+}
+
+
+test "si froki tiene la jabalina termina matando a aurora" {
+  froki.cambiarArma(jabalina)
+  froki.encontrar(aurora)
+  assert.notThat(aurora.vive())
+}
+
+
+test "mario no es feliz si encuentra a aurora" {
+  mario.encontrar(aurora)
+  assert.notThat(mario.esFeliz())
+}
+
+test "al principio del juego luisa no nace con ningun rol" {
+  assert.equals(null, luisa.personaje())
+}
+
+
+
 
 }
